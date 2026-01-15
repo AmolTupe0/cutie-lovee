@@ -1,45 +1,88 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Admiration Flow 💫</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>For Someone Special ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Animated gradient background -->
-    <div class="background"></div>
-    
-    <!-- Floating particles (flowers + hearts) -->
-    <div class="particles"></div>
-    
-    <!-- Main container -->
-    <div class="container">
-        <!-- Start screen -->
-        <button id="start-btn" class="glow-btn">Tap to Begin 💫</button>
-        
-        <!-- Text scenes -->
-        <div id="scene" class="scene"></div>
-        
-        <!-- Continue button -->
-        <button id="continue-btn" class="glow-btn hidden">Continue 💖</button>
-        
-        <!-- Final photos section (hidden initially) -->
-        <div id="ending" class="ending hidden">
-            <div class="photo-carousel">
-                <img src="photo1.jpg" alt="You 1" class="photo active">
-                <img src="photo2.jpg" alt="You 2" class="photo">
-                <img src="photo3.jpg" alt="You 3" class="photo">
-                <img src="photo4.jpg" alt="You 4" class="photo">
-            </div>
-            <p class="ending-text">Just looking at you makes everything feel right 🌸💖</p>
-        </div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="ye-tune-kya-kiya.mp3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- FLOATING FLOWERS -->
+<div class="flowers"></div>
+
+<div class="container">
+
+  <!-- SCREEN 1 -->
+  <section class="screen active">
+    <div class="heart">💖</div>
+    <h1>Hey…</h1>
+    <p>This is not random.<br>This is just for you.</p>
+    <button onclick="startExperience()">Tap gently ✨</button>
+  </section>
+
+  <!-- SCREEN 2 -->
+  <section class="screen">
+    <h2>Some things I feel…</h2>
+
+    <div class="tap" data-text="You have the most calming presence 🌙">Tap me</div>
+    <div class="tap" data-text="Your smile feels like peace 🌸">Tap me</div>
+    <div class="tap" data-text="You make moments feel softer ✨">Tap me</div>
+
+    <button onclick="next()">Continue →</button>
+  </section>
+
+  <!-- SCREEN 3 -->
+  <section class="screen">
+    <h2>Calculating something important…</h2>
+
+    <div class="meter">
+      <span id="count">0%</span>
+      <div class="progress">
+        <div class="fill"></div>
+      </div>
     </div>
-    
-    <!-- Background music (starts after tap) -->
-    <audio id="bg-music" src="ye-tune-kya-kiya.mp3.mp3" loop></audio>
-    
-    <script src="main.js"></script>
+
+    <p class="alert">⚠️ Result exceeds limits</p>
+    <button onclick="next()">I knew it →</button>
+  </section>
+
+  <!-- SCREEN 4 -->
+  <section class="screen">
+    <div class="emoji">🐼</div>
+    <h2>A small note</h2>
+
+    <div class="letter">
+      <p>
+        I don’t know how to explain this properly…<br><br>
+
+        But there’s something about you that feels rare.
+        The way you exist, the way you talk, the way you carry yourself —
+        it feels gentle, real, and warm.<br><br>
+
+        You don’t try too hard.
+        You don’t need to.
+        Being you is already enough. 💗
+      </p>
+    </div>
+
+    <button onclick="next()">One last thing →</button>
+  </section>
+
+  <!-- SCREEN 5 -->
+  <section class="screen">
+    <div class="emoji">🌹</div>
+    <h1>You’re genuinely special</h1>
+    <p>No pressure. No expectations.<br>Just honesty.</p>
+  </section>
+
+</div>
+
+<script src="main.js"></script>
 </body>
-</html>
+    </html>
