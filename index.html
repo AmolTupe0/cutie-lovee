@@ -1,27 +1,34 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>For My Cutie ❤️</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="stylesheet" href="css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Admiration Flow</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
-  <audio id="bgMusic" loop>
-    <source src="ye-tune-kya-kiya.mp3.mp3" type="audio/mpeg">
-  </audio>
-
-  <div id="overlay">
-    <div class="start-btn">Tap to feel 💫</div>
-  </div>
-
-  <div class="scene">
-    <div id="text"></div>
-  </div>
-
-  <script src="main.js"></script>
+    <!-- Background gradient container -->
+    <div class="background"></div>
+    
+    <!-- Particles container for floating elements -->
+    <div class="particles"></div>
+    
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Initial start button -->
+        <button id="start-btn" class="glow-btn">Tap to Begin 💫</button>
+        
+        <!-- Scene container where texts will appear -->
+        <div id="scene" class="scene"></div>
+        
+        <!-- Continue button, hidden initially -->
+        <button id="continue-btn" class="glow-btn hidden">Continue 💖</button>
+    </div>
+    
+    <!-- Background music -->
+    <audio id="bg-music" src="ye-tune-kya-kiya.mp3.mp3" loop></audio>
+    
+    <script src="main.js"></script>
 </body>
 </html>
