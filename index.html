@@ -4,30 +4,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Admiration Flow</title>
+    <title>Admiration Flow 💫</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background gradient container -->
+    <!-- Animated gradient background -->
     <div class="background"></div>
     
-    <!-- Particles container for floating elements -->
+    <!-- Floating particles (flowers + hearts) -->
     <div class="particles"></div>
     
-    <!-- Main content container -->
+    <!-- Main container -->
     <div class="container">
-        <!-- Initial start button -->
+        <!-- Start screen -->
         <button id="start-btn" class="glow-btn">Tap to Begin 💫</button>
         
-        <!-- Scene container where texts will appear -->
+        <!-- Text scenes -->
         <div id="scene" class="scene"></div>
         
-        <!-- Continue button, hidden initially -->
+        <!-- Continue button -->
         <button id="continue-btn" class="glow-btn hidden">Continue 💖</button>
+        
+        <!-- Final photos section (hidden initially) -->
+        <div id="ending" class="ending hidden">
+            <div class="photo-carousel">
+                <img src="photo1.jpg" alt="You 1" class="photo active">
+                <img src="photo2.jpg" alt="You 2" class="photo">
+                <img src="photo3.jpg" alt="You 3" class="photo">
+                <img src="photo4.jpg" alt="You 4" class="photo">
+            </div>
+            <p class="ending-text">Just looking at you makes everything feel right 🌸💖</p>
+        </div>
     </div>
     
-    <!-- Background music -->
-    <audio id="bg-music" src="ye-tune-kya-kiya.mp3.mp3" loop></audio>
+    <!-- Background music (starts after tap) -->
+    <audio id="bg-music" src="ye-tune-kya-kiya.mp3" loop></audio>
     
     <script src="main.js"></script>
 </body>
