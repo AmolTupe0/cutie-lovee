@@ -1,34 +1,30 @@
 /* style.css */
 
-/* Reset and base styles for mobile-first */
+/* ========================
+   Base & Reset 
+   ======================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
     overflow: hidden;
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: #fff;
     text-align: center;
     position: relative;
+    font-family: 'Georgia', serif; /* Soft, romantic font for dreamy feel */
 }
 
-/* Animated gradient background */
+/* Animated dreamy gradient - enhanced with more romantic colors */
 .background {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #fbc2eb, #ff9a9e);
-    background-size: 300% 300%;
-    animation: gradientFlow 20s ease infinite;
+    inset: 0;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffd1ff, #a18cd1, #fbc2eb, #ff9a9e, #fecfef);
+    background-size: 400% 400%; /* Larger size for smoother flow */
+    animation: gradientFlow 28s ease infinite;
     z-index: -2;
 }
 
@@ -38,56 +34,53 @@ body {
     100% { background-position: 0% 50%; }
 }
 
-/* Particles container */
+/* Floating particles (now more variety for attachment feel) */
 .particles {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    z-index: -1;
+    inset: 0;
     pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
 }
 
-/* Particle styles (will be generated via JS) */
 .particle {
     position: absolute;
-    font-size: 1.5em;
-    opacity: 0.5;
-    animation: float 15s linear infinite;
-    filter: blur(1px);
+    font-size: 1.8em;
+    opacity: 0.6;
+    animation: float 18s linear infinite;
+    filter: blur(0.8px);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Soft glow for beauty */
 }
 
 @keyframes float {
-    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.5; }
-    90% { opacity: 0.5; }
-    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.7; }
+    90% { opacity: 0.7; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
 }
 
-/* Main container */
+/* Container */
 .container {
     position: relative;
     z-index: 1;
-    padding: 20px;
-    max-width: 90%;
     height: 100%;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* Scene text styles */
+/* Scene text - enhanced for emotional flow */
 .scene {
-    font-size: 1.2em;
-    line-height: 1.5;
-    margin-bottom: 40px;
+    font-size: 1.25em;
+    line-height: 1.6;
+    margin-bottom: 50px;
     opacity: 0;
-    filter: blur(5px);
-    transform: translateY(20px);
-    transition: opacity 1s ease, filter 1s ease, transform 1s ease;
+    filter: blur(4px);
+    transform: translateY(30px);
+    transition: all 1.2s ease;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Depth for cinematic feel */
 }
 
 .scene.active {
@@ -96,43 +89,134 @@ body {
     transform: translateY(0);
 }
 
-/* Glowing button styles */
+/* Glow button - more premium animation */
 .glow-btn {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(255,255,255,0.18);
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2em;
-    color: #fff;
-    border-radius: 30px;
+    padding: 16px 36px;
+    font-size: 1.25em;
+    color: white;
+    border-radius: 50px;
     cursor: pointer;
-    box-shadow: 0 0 20px rgba(255, 182, 193, 0.5);
-    animation: glow 2s ease-in-out infinite;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 25px rgba(255,182,193,0.6);
+    animation: glow 2.5s ease-in-out infinite;
+    transition: all 0.4s ease;
 }
 
 .glow-btn:hover, .glow-btn:active {
-    transform: scale(1.05);
-    box-shadow: 0 0 30px rgba(255, 182, 193, 0.8);
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(255,182,193,0.9);
 }
 
 @keyframes glow {
-    0% { box-shadow: 0 0 10px rgba(255, 182, 193, 0.3); }
-    50% { box-shadow: 0 0 20px rgba(255, 182, 193, 0.6); }
-    100% { box-shadow: 0 0 10px rgba(255, 182, 193, 0.3); }
+    0%,100% { box-shadow: 0 0 15px rgba(255,182,193,0.4); }
+    50%     { box-shadow: 0 0 30px rgba(255,182,193,0.8); }
 }
 
-/* Hidden class */
-.hidden {
-    display: none;
+.hidden { display: none !important; }
+
+/* ========================
+   ENDING - Photo Carousel 
+   ======================== */
+.ending {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
 }
 
-/* Media query for larger screens (though mobile-first) */
-@media (min-width: 768px) {
-    .scene {
-        font-size: 1.5em;
-    }
-    .glow-btn {
-        font-size: 1.5em;
-        padding: 20px 40px;
-    }
+.photo-carousel {
+    position: relative;
+    width: 100%;
+    height: 420px; /* Adjusted for 9:16 mobile feel */
+    margin: 0 auto 30px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    background: rgba(255, 255, 255, 0.1); /* Subtle overlay for dreaminess */
 }
+
+.photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.8s ease, transform 1.8s ease;
+    filter: brightness(1.1) contrast(1.05); /* Enhance beauty */
+}
+
+.photo.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Small floating hearts around photos - more for attachment */
+.ending::before,
+.ending::after,
+.ending .photo-carousel::before,
+.ending .photo-carousel::after {
+    content: '💖';
+    position: absolute;
+    font-size: 2em;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    animation: heartFloat 8s ease-in-out infinite;
+}
+
+.ending::before {
+    top: 10%;
+    left: -15%;
+    animation-delay: 0s;
+}
+
+.ending::after {
+    bottom: 15%;
+    right: -15%;
+    animation-delay: 2s;
+}
+
+.ending .photo-carousel::before {
+    top: 20%;
+    right: -10%;
+    animation-delay: 1s;
+    content: '🌸';
+}
+
+.ending .photo-carousel::after {
+    bottom: 25%;
+    left: -10%;
+    animation-delay: 3s;
+    content: '✨';
+}
+
+@keyframes heartFloat {
+    0%   { opacity: 0; transform: translate(0, 0) scale(0.6); }
+    20%  { opacity: 0.9; transform: translate(30px, -40px) scale(1.1); }
+    50%  { opacity: 0.7; transform: translate(-20px, -80px) scale(0.9); }
+    80%  { opacity: 0.9; transform: translate(40px, -30px) scale(1.2); }
+    100% { opacity: 0; transform: translate(0, -120px) scale(0.5); }
+}
+
+.ending-text {
+    font-size: 1.3em;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1.4s ease 0.6s;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ending.active .ending-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Mobile-first enhancements */
+@media (max-width: 500px) {
+    .scene { font-size: 1.35em; }
+    .photo-carousel { height: 500px; } /* Taller for mobile portrait */
+    .particle { font-size: 2em; } /* Larger particles for immersion */
+    }
